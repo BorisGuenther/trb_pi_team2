@@ -1,0 +1,30 @@
+{namespace trb = TRB\TrbBasicsViewhelper\ViewHelpers}
+<div class="row team text-center">
+	<ul class="lightbox nomargin-left list-unstyled" data-sort-id="isotope-list" data-plugin-options='{"delegate": "a.img-thumbnail", "gallery": {"enabled": false}}'>
+		
+		<f:for each="{users}" as="user">
+			<li class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+				<div class="thumbnail text-center">
+					<div class="item-image">
+						<a class="img-thumbnail lightbox" href="{user.image_profile.0.originalResource.publicUrl}">
+							<f:image src="{user.image_profile.0.originalResource.publicUrl}" class="img-responsive" width="600" />
+						</a>
+						<h3>
+							<span>
+								<f:if condition="{user.nationality}">
+									<trb:flag country="{user.nationality}" size="2" />
+								</f:if>
+								{user.name}<f:if condition="{user.birthday}">, {user.age}</f:if>
+							</span> 
+						</h3>
+					</div>
+					<div class="caption text-left">
+						<f:link.action pageUid="{settings.pid_detail}" pluginName="user" controller="User" action="detail" arguments="{user : user}" class="btn btn-success" >
+							<i class="fa fa-user"></i><f:translate key="read_more" />
+						</f:link.action>
+					</div>
+				</div>
+			</li>
+		</f:for>
+	</ul>
+</div>

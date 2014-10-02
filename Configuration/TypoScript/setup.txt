@@ -1,0 +1,42 @@
+plugin.tx_trbpiteam2 {
+	view {
+		templateRootPath = {$plugin.tx_trbpiteam2.view.templateRootPath}
+		partialRootPath = {$plugin.tx_trbpiteam2.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_trbpiteam2.view.layoutRootPath}
+	}
+	persistence {
+		classes {
+			TRB\TrbPiTeam2\Domain\Model\User {
+				mapping {
+					tableName = fe_users
+					columns {
+						tx_trb_pi_team2_nationality.mapOnProperty = nationality
+						tx_trb_pi_team2_birthday.mapOnProperty = birthday
+						tx_trb_pi_team2_slogan.mapOnProperty = slogan
+						tx_trb_pi_team2_description.mapOnProperty = description
+						tx_trb_pi_team2_mobile.mapOnProperty = mobile
+						tx_trb_pi_team2_skype.mapOnProperty = skype
+						tx_trb_pi_team2_facebook.mapOnProperty = facebook
+						tx_trb_pi_team2_googleplus.mapOnProperty = googleplus
+						tx_trb_pi_team2_linkedin.mapOnProperty = linkedin
+						tx_trb_pi_team2_xing.mapOnProperty = xing
+						tx_trb_pi_team2_twitter.mapOnProperty = twitter
+						tx_trb_pi_team2_size.mapOnProperty = size
+						tx_trb_pi_team2_weight.mapOnProperty = weight
+						tx_trb_pi_team2_shape.mapOnProperty = shape
+						tx_trb_pi_team2_breast.mapOnProperty = breast
+						tx_trb_pi_team2_measurements.mapOnProperty = measurements
+						tx_trb_pi_team2_eye_color.mapOnProperty = eye_color
+						tx_trb_pi_team2_hair_color.mapOnProperty = hair_color
+						tx_trb_pi_team2_haircut.mapOnProperty = haircut
+						tx_trb_pi_team2_image_profile.mapOnProperty = image_profile
+						tx_trb_pi_team2_image_gallery.mapOnProperty = image_gallery
+						tx_trb_pi_team2_categories_like.mapOnProperty = categories_like
+						tx_trb_pi_team2_categories_dislike.mapOnProperty = categories_dislike
+						tx_trb_pi_team2_categories_other.mapOnProperty = categories_other
+					}
+				}
+			}
+		}
+	}
+}

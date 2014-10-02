@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-08-16T17:27:06Z" product-name="trb_pi_team2">
+		<header/>
+		<body>
+			<!-- fe_users -->
+			<trans-unit id="fe_users.nationality"><source>Nationality:</source></trans-unit>
+			<trans-unit id="fe_users.birthday"><source>Birthday:</source></trans-unit>
+			<trans-unit id="fe_users.slogan"><source>Slogan:</source></trans-unit>
+			<trans-unit id="fe_users.description"><source>Description:</source></trans-unit>
+			<trans-unit id="fe_users.mobile"><source>Mobile:</source></trans-unit>
+			<trans-unit id="fe_users.skype"><source>Skype:</source></trans-unit>
+			<trans-unit id="fe_users.facebook"><source>Facebook:</source></trans-unit>
+			<trans-unit id="fe_users.googleplus"><source>Googleplus:</source></trans-unit>
+			<trans-unit id="fe_users.linkedin"><source>Linkedin:</source></trans-unit>
+			<trans-unit id="fe_users.xing"><source>Xing:</source></trans-unit>
+			<trans-unit id="fe_users.twitter"><source>Twitter:</source></trans-unit>
+			<trans-unit id="fe_users.size"><source>Size:</source></trans-unit>
+			<trans-unit id="fe_users.weight"><source>Weight:</source></trans-unit>
+			<trans-unit id="fe_users.shape"><source>Shape:</source></trans-unit>
+			<trans-unit id="fe_users.breast"><source>Breast:</source></trans-unit>
+			<trans-unit id="fe_users.measurements"><source>Measurements:</source></trans-unit>
+			<trans-unit id="fe_users.eye_color"><source>Eye Color:</source></trans-unit>
+			<trans-unit id="fe_users.hair_color"><source>Hair Color:</source></trans-unit>
+			<trans-unit id="fe_users.haircut"><source>Haircut:</source></trans-unit>
+			<trans-unit id="fe_users.image_profile"><source>Image Profile:</source></trans-unit>
+			<trans-unit id="fe_users.image_gallery"><source>Image Gallery:</source></trans-unit>
+			<trans-unit id="fe_users.categories_like"><source>Categories Like:</source></trans-unit>
+			<trans-unit id="fe_users.categories_dislike"><source>Categories Dislike:</source></trans-unit>
+			<trans-unit id="fe_users.categories_other"><source>Categories Other:</source></trans-unit>
+			
+			<!-- schedule -->
+			<trans-unit id="tx_trbpiteam2_domain_model_schedule"><source>Schedule</source></trans-unit>
+			<trans-unit id="tx_trbpiteam2_domain_model_schedule.start"><source>From</source></trans-unit>
+			<trans-unit id="tx_trbpiteam2_domain_model_schedule.end"><source>Until</source></trans-unit>
+			<trans-unit id="tx_trbpiteam2_domain_model_schedule.users"><source>User</source></trans-unit>
+			
+			<!-- Flexform -->
+			<trans-unit id="flex.options"><source>Options</source></trans-unit>
+			<trans-unit id="flex.mode"><source>Mode</source></trans-unit>
+			<trans-unit id="flex.list"><source>List</source></trans-unit>
+			<trans-unit id="flex.detail"><source>Detail</source></trans-unit>
+			<trans-unit id="flex.storage_page"><source>Storage page</source></trans-unit>
+			<trans-unit id="flex.detail_page"><source>Detail page</source></trans-unit>
+			<trans-unit id="flex.back_page"><source>Back page</source></trans-unit>
+			<trans-unit id="flex.layout"><source>Layout</source></trans-unit>
+			<trans-unit id="flex.layout.default"><source>Default</source></trans-unit>
+			
+		</body>
+	</file>
+</xliff>

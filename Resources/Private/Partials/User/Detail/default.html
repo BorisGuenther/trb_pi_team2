@@ -1,0 +1,281 @@
+{namespace trb = TRB\TrbBasicsViewhelper\ViewHelpers}
+<div class="team-detail">
+	<div class="row">
+		<!-- IMAGE -->
+		<div class="col-md-6">
+			<!-- Carousel -->
+			<f:if condition="{user.image_gallery}">
+				<f:then>
+					<div class="owl-carousel controlls-over" data-plugin-options='{"items": 1, "autoHeight": true, "navigation": true, "pagination": false, "transitionStyle":"fadeUp"}'>
+						<f:for each="{user.image_gallery}" as="image">
+							<div>
+								<f:image src="{image.originalResource.publicUrl}" class="img-responsive" />
+							</div>
+						</f:for>
+					</div>	
+				</f:then>
+				<f:else>
+					<f:if condition="{user.image_profile}">
+					</f:if>
+				</f:else>
+			</f:if>
+		</div>
+	
+		<!-- FACTS -->
+		<div class="col-md-6">
+			<f:format.html>{user.description}</f:format.html>
+			<ul class="fa-ul">
+				<f:if condition="{user.age}">
+					<li><i class="fa fa-li fa-birthday-cake"></i>{user.age}</li>
+				</f:if>
+				<f:if condition="{user.nationality}">
+					<li><i class="fa fa-li fa-flag-o"></i>{user.nationality.officialNameEn} <trb:flag country="{user.nationality}" size="1"></trb:flag></li>
+				</f:if>
+				<f:if condition="{user.phone}">
+					<f:then>
+						<li><i class="fa fa-li fa-phone"></i>{user.phone}</li>
+					</f:then>
+					<f:else>
+						<f:if condition="{user.mobile}">
+							<li><i class="fa fa-li fa-mobile"></i>{user.mobile}</li>
+						</f:if>
+					</f:else>
+				</f:if>
+				<f:if condition="{user.email}">
+					<li><i class="fa fa-li fa-envelope"></i><f:link.email email="{user.email}" target="new">{user.email}</f:link.email></li>
+				</f:if>
+			</ul>
+			
+			<f:if condition="{settings.pid_back}">
+				<f:link.page pageUid="{settings.pid_back}">&laquo; <f:translate key="back_to_list" /></f:link.page><br />
+			</f:if>
+		</div>
+	</div>
+	
+	
+	<!-- ACCORDION -->
+	<div class="panel-group" id="accordion">
+	
+		<!-- SPECIALS -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#panel-specials"><i class="fa fa-star"></i><f:translate key="team.details.tabs.specials" /></a></h4>
+			</div>
+			<div id="panel-specials" class="collapse in">
+				<div class="panel-body panel-specials">
+					<div class="row">
+						<!-- LIKE -->
+						<div class="col-md-3">
+							<h4><f:translate key="team.details.options.like" /></h4>
+							<ul class="fa-ul">
+								<f:for each="{user.categories_like}" as="category">
+									<li>
+										<i class="fa fa-li fa-star"></i>{category.title}
+										<f:if condition="{category.description}">
+											<a href="#" data-container="body" data-toggle="popover" data-placement="top" data-content="{category.description}" data-original-title="{category.title}" title="{category.title}"><i class="fa fa-question-circle"></i></a> 
+										</f:if>
+									</li>
+								</f:for>
+							</ul>
+						</div>
+						
+						<!-- MAYBE -->
+						<div class="col-md-3">
+							<h4><f:translate key="team.details.options.maybe" /></h4>
+							<ul class="fa-ul">
+								<f:for each="{user.categories_other}" as="category">
+									<li>
+										<i class="fa fa-li fa-star-half-full"></i>{category.title}
+										<f:if condition="{category.description}">
+											<a href="#" data-container="body" data-toggle="popover" data-placement="top" data-content="{category.description}" data-original-title="{category.title}" title="{category.title}"><i class="fa fa-question-circle"></i></a> 
+										</f:if>
+									</li>
+								</f:for>
+							</ul>
+						</div>
+		
+						<!-- DISLIKE -->
+						<div class="col-md-3">
+							<h4><f:translate key="team.details.options.dislike" /></h4>
+							<ul class="fa-ul">
+								<f:for each="{user.categories_dislike}" as="category">
+									<li>
+										<i class="fa fa-li fa-star-o"></i>{category.title}
+										<f:if condition="{category.description}">
+											<a href="#" data-container="body" data-toggle="popover" data-placement="top" data-content="{category.description}" data-original-title="{category.title}" title="{category.title}"><i class="fa fa-question-circle"></i></a> 
+										</f:if>
+									</li>
+								</f:for>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+		<!-- APPEARANCE -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#panel-appearance"><i class="fa fa-eye"></i><f:translate key="team.details.tabs.appearance" /></a></h4>
+			</div>
+			<div id="panel-appearance" class="collapse">
+				<div class="panel-body panel-appearance">
+						<f:if condition="{user.size}">
+							<div class="row">
+								<div class="col-sm-2"><f:translate key="team.details.appearance.size" />:</div>
+								<div class="col-sm-10">{user.size} cm</div>
+							</div>
+						</f:if>
+						
+						<f:if condition="{user.weight}">
+							<div class="row">
+								<div class="col-sm-2"><f:translate key="team.details.appearance.weight" />:</div>
+								<div class="col-sm-10">{user.weight} kg</div>
+							</div>
+						</f:if>
+						
+						<f:if condition="{user.shape}">
+							<div class="row">
+								<div class="col-sm-2"><f:translate key="team.details.appearance.shape" />:</div>
+								<div class="col-sm-10">{user.shape.0.title}</div>
+							</div>
+						</f:if>
+						
+						<f:if condition="{user.breast}">
+							<div class="row">
+								<div class="col-sm-2"><f:translate key="team.details.appearance.breast" />:</div>
+								<div class="col-sm-10">{user.breast}</div>
+							</div>
+						</f:if>
+						
+						<f:if condition="{user.measurements}">
+							<div class="row">
+								<div class="col-sm-2"><f:translate key="team.details.appearance.measurements" />:</div>
+								<div class="col-sm-10">{user.measurements}</div>
+							</div>
+						</f:if>
+						
+						<f:if condition="{user.eye_color}">
+							<div class="row">
+								<div class="col-sm-2"><f:translate key="team.details.appearance.eye" />:</div>
+								<div class="col-sm-10">{user.eye_color.0.title}</div>
+							</div>
+						</f:if>
+						
+						<f:if condition="{user.hair_color}">
+							<f:then>
+								<div class="row">
+									<div class="col-sm-2"><f:translate key="team.details.appearance.hair" />:</div>
+									<div class="col-sm-10">
+										{user.hair_color.0.title}<f:if condition="{user.haircut}">, {user.haircut.0.title}</f:if>
+									</div>
+								</div>
+							</f:then>
+							<f:else>
+								<f:if condition="{user.haircut}">
+									<div class="row">
+										<div class="col-sm-2"><f:translate key="team.details.appearance.hair" />:</div>
+										<div class="col-sm-10">{user.haircut.0.title}</div>
+									</div>
+								</f:if>
+							</f:else>
+						</f:if>
+				</div>
+			</div>
+		</div>
+	
+	
+		<!-- CONTACT -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#panel-social"><i class="fa fa-external-link"></i><f:translate key="team.details.tabs.social" /></a></h4>
+			</div>
+			<div id="panel-social" class="collapse">
+				<div class="panel-body panel-contact">
+					<f:if condition="{user.telephone}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-phone"></i><f:translate key="team.details.contact.telephone" />:</div>
+							<div class="col-sm-10">{user.telephone}</div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.mobile}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-mobile"></i><f:translate key="team.details.contact.mobile" />:</div>
+							<div class="col-sm-10">{user.mobile}</div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.fax}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-fax"></i><f:translate key="team.details.contact.fax" />:</div>
+							<div class="col-sm-10">{user.fax}</div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.skype}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-skype"></i><f:translate key="team.details.contact.skype" />:</div>
+							<div class="col-sm-10">{user.skype}</div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.email}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-envelope"></i><f:translate key="team.details.contact.email" />:</div>
+							<div class="col-sm-10"><f:link.email email="{user.email}" target="new">{user.email}</f:link.email></div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.facebook}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-facebook"></i><f:translate key="team.details.contact.facebook" />:</div>
+							<div class="col-sm-10"><f:link.external uri="{user.facebook}" target="new">{user.facebook}</f:link.external></div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.googleplus}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-google-plus"></i><f:translate key="team.details.contact.googleplus" />:</div>
+							<div class="col-sm-10"><f:link.external uri="{user.googleplus}" target="new">{user.googleplus}</f:link.external></div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.linkedin}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-linkedin"></i><f:translate key="team.details.contact.linkedin" />:</div>
+							<div class="col-sm-10"><f:link.external uri="{user.linkedin}" target="new">{user.linkedin}</f:link.external></div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.xing}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-xing"></i><f:translate key="team.details.contact.xing" />:</div>
+							<div class="col-sm-10"><f:link.external uri="{user.xing}" target="new">{user.xing}</f:link.external></div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.twitter}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-twitter"></i><f:translate key="team.details.contact.twitter" />:</div>
+							<div class="col-sm-10"><f:link.external uri="{user.twitter}" target="new">{user.twitter}</f:link.external></div>
+						</div>
+					</f:if>
+					
+					<f:if condition="{user.www}">
+						<div class="row">
+							<div class="col-sm-2"><i class="fa fa-globe"></i><f:translate key="team.details.contact.www" />:</div>
+							<div class="col-sm-10"><f:link.external uri="{user.www}" target="new">{user.www}</f:link.external></div>
+						</div>
+					</f:if>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<f:if condition="{settings.pid_back}">
+		<f:link.page pageUid="{settings.pid_back}">&laquo; <f:translate key="back_to_list" /></f:link.page><br />
+	</f:if>
+</div>

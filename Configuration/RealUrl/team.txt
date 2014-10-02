@@ -1,0 +1,14 @@
+'team' => array(
+	'0' => array(
+		'GETvar' => 'tx_trbpiteam2_user[controller]',
+		'valueMap' => array(
+			'user' => 'User',
+		),
+	),
+	'1' => array(
+		'GETvar' => 'tx_trbpiteam2_user[action]',
+	),
+	'2' => array(
+		'GETvar' => 'tx_trbpiteam2_user[user]',
+	),
+),

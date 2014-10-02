@@ -1,0 +1,14 @@
+# customsubcategory=trb_pi_team2=Team2
+
+plugin.tx_trbpiteam2 {
+	view {
+		# cat=TRB Common: Paths/trb_pi_team2/10; type=string; label=Templates Root Path;
+		templateRootPath = EXT:trb_pi_team2/Resources/Private/Templates/
+
+		# cat=TRB Common: Paths/trb_pi_team2/20; type=string; label=Partials Root Path;
+		partialRootPath = EXT:trb_pi_team2/Resources/Private/Partials/
+
+		# cat=TRB Common: Paths/trb_pi_team2/30; type=string; label=Layouts Root Path;
+		layoutRootPath = EXT:trb_pi_team2/Resources/Private/Layouts/		
+	}
+}

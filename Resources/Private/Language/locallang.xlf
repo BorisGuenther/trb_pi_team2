@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-31T13:19:25Z" product-name="trb_pi_team2">
+		<header/>
+		<body>
+			<!-- TEAM -->
+			<trans-unit id="team.details.tabs.specials"><source>Specials</source></trans-unit>
+			<trans-unit id="team.details.tabs.appearance"><source>Appearance</source></trans-unit>
+			<trans-unit id="team.details.tabs.social"><source>Contact</source></trans-unit>
+			
+			<trans-unit id="team.details.options.like"><source>Like</source></trans-unit>
+			<trans-unit id="team.details.options.maybe"><source>Maybe</source></trans-unit>
+			<trans-unit id="team.details.options.dislike"><source>Dislike</source></trans-unit>
+			
+			<trans-unit id="team.details.appearance.size"><source>Size</source></trans-unit>
+			<trans-unit id="team.details.appearance.weight"><source>Weight</source></trans-unit>
+			<trans-unit id="team.details.appearance.shape"><source>Shape</source></trans-unit>
+			<trans-unit id="team.details.appearance.breast"><source>Breast</source></trans-unit>
+			<trans-unit id="team.details.appearance.measurements"><source>Measurements</source></trans-unit>
+			<trans-unit id="team.details.appearance.eye"><source>Eyes</source></trans-unit>
+			<trans-unit id="team.details.appearance.hair"><source>Hair</source></trans-unit>
+
+			<trans-unit id="team.details.contact.mobile"><source>Mobile</source></trans-unit>
+			<trans-unit id="team.details.contact.skype"><source>Skype</source></trans-unit>
+			<trans-unit id="team.details.contact.facebook"><source>Facebook</source></trans-unit>
+			<trans-unit id="team.details.contact.googleplus"><source>Google+</source></trans-unit>
+			<trans-unit id="team.details.contact.linkedin"><source>LinkedIn</source></trans-unit>
+			<trans-unit id="team.details.contact.xing"><source>Xing</source></trans-unit>
+			<trans-unit id="team.details.contact.twitter"><source>Twitter</source></trans-unit>
+			<trans-unit id="team.details.contact.telephone"><source>Phone</source></trans-unit>
+			<trans-unit id="team.details.contact.fax"><source>Fax</source></trans-unit>
+			<trans-unit id="team.details.contact.email"><source>E-Mail</source></trans-unit>
+			<trans-unit id="team.details.contact.www"><source>Website</source></trans-unit>
+
+			<!-- SCHEDULE -->
+			<trans-unit id="team.schedule.dateformat.start"><source>j. F</source></trans-unit>
+			<trans-unit id="team.schedule.dateformat.end"><source>j. F Y</source></trans-unit>
+
+			<!-- GENERAL -->
+			<trans-unit id="read_more"><source>Read more</source></trans-unit>
+			<trans-unit id="back_to_list"><source>Back to list</source></trans-unit>
+		</body>
+	</file>
+</xliff>

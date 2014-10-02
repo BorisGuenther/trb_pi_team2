@@ -1,0 +1,9 @@
+{namespace trb = TRB\TrbBasicsViewhelper\ViewHelpers}
+<trb:exchange key="title">
+	{user.name}<f:if condition="{user.age}">, {user.age}</f:if>
+	<f:if condition="{user.nationality}">
+		- {user.nationality.officialNameEn} <trb:flag country="{user.nationality}"></trb:flag>
+	</f:if>
+</trb:exchange>
+<trb:exchange key="slogan" value="{user.slogan}" />
+<trb:render partial="User/Detail/{settings.detail_layout}" arguments="{_all}" fallback="User/Detail/default" />

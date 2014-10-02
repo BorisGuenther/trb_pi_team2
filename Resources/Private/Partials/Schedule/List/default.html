@@ -1,0 +1,24 @@
+{namespace trb = TRB\TrbBasicsViewhelper\ViewHelpers}
+<div class="panel-group" id="accordion">
+	<f:for each="{schedules}" as="schedule" iteration="iterator">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#panel-schedule-{schedule.uid}">
+						<i class="fa fa-calendar"></i>
+						<f:format.date format="{f:translate(key:'team.schedule.dateformat.start')}">{schedule.start}</f:format.date>
+						 - 
+						<f:format.date format="{f:translate(key:'team.schedule.dateformat.end')}">{schedule.end}</f:format.date>
+					</a>
+				</h4>
+			</div>
+			<div id="panel-schedule-{schedule.uid}" class="collapse {f:if(condition: '{iterator.isFirst}', then: 'in')}">
+				<div class="panel-body">
+					<div class="row">
+						<trb:render partial="User/List/default" arguments="{users: schedule.users}" fallback="User/List/default" />	
+					</div>
+				</div>
+			</div>
+		</div>
+	</f:for>
+</div>
